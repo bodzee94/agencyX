@@ -1,31 +1,35 @@
 (function($) {
     "use strict"; // Start of use strict
 
-    // jQuery for page scrolling feature - requires jQuery Easing plugin
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
-        }, 1250, 'easeInOutExpo');
-        event.preventDefault();
-    });
+    var links = document.querySelectorAll(".links");
+    var conOne = document.querySelector("#conOne");
+    var conTwo = document.querySelector("#conTwo");
+    var conThree = document.querySelector("#conThree");
 
-    // Highlight the top nav as scrolling occurs
-    $('body').scrollspy({
-        target: '.navbar-fixed-top',
-        offset: 100
-    });
+    function changeContent(e) {
+      var selectCon = e.currentTarget.id;
+      console.log(selectCon);
 
-    // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function() {
-        $('.navbar-toggle:visible').click();
-    });
+    if(selectCon == "linkOne") {
+      //console.log("conOne fired");
+      conOne.style.display="block";
+      conTwo.style.display="none";
+      conThree.style.display="none";
+    }else if(selectCon == "linkTwo") {
+      //console.log("conTwo fired");
+      conOne.style.display="none";
+      conTwo.style.display="block";
+      conThree.style.display="none";
+    }else{
+      //console.log("conThree fired")
+      conOne.style.display="none";
+      conTwo.style.display="none";
+      conThree.style.display="block";
+    }
+  }
 
-    // Offset for Main Navigation
-    $('#mainNav').affix({
-        offset: {
-            top: 50
-        }
-    })
+    for(var i=0; i<links.length; i++){
+      links[i].addEventListener("click", changeContent, false);
+    }
 
-})(jQuery); // End of use strict
+})();

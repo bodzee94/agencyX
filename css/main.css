@@ -23,6 +23,16 @@ a:hover, a:focus {
   color: #fcbd20;
 }
 
+.btn {
+  background: #40e0d0;
+  color: white;
+}
+
+.btn:hover, btn:focus {
+  background: #fdcc52;
+  color: white;
+}
+
 .heading-font {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
@@ -40,7 +50,7 @@ a:hover, a:focus {
 }
 
 p {
-  font-size: 18px;
+  font-size: 1.125em;
   line-height: 1.5;
   margin-bottom: 20px;
 }
@@ -168,9 +178,9 @@ header {
   width: 100%;
   min-height: auto;
   position: relative;
-  background: url("../img/bg-pattern.png"), #7b4397;
-  background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
-  background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
+  background: #7b4397;
+  background: -webkit-linear-gradient(to left, #7b4397, #dc2430);
+  background: linear-gradient(to left, #7b4397, #dc2430);
   color: white;
   overflow-y: hidden;
 }
@@ -181,7 +191,7 @@ header {
   position: relative;
 }
 
-.header-content .header-content-inner {
+.header-content {
   position: relative;
   max-width: 500px;
   margin: 0 auto;
@@ -245,4 +255,8 @@ header {
   header .header-content .header-content-inner h1 {
     font-size: 50px;
   }
+}
+
+#conTwo, #conThree {
+  display: none;
 }
